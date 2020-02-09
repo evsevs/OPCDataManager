@@ -1,0 +1,32 @@
+// DDE2OPCPlugin.idl : IDL source for DDE2OPCPlugin.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DDE2OPCPlugin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "DMPluginIfs.idl";
+[
+	uuid(F4130A69-C515-40bf-AE4D-8CAA2EF5F776),
+	version(1.0),
+	helpstring("DDE2OPCPlugin 1.0 Type Library")
+]
+library DDE2OPCPLUGINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(A53F49FF-FBEE-4239-B9A1-5337A785C6DB),
+		helpstring("CDDEPlug Class")
+	]
+	coclass CDDEPlug
+	{
+//		[default] interface ICXMLPlug;
+//		[default, source] dispinterface _ICXMLPlugEvents;
+		[default] interface IPluginConfig;
+		interface IPluginData;
+		[default, source] interface IPluginDataCallback;
+	};
+};

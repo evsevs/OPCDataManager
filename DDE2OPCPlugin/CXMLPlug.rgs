@@ -1,0 +1,25 @@
+HKCR
+{
+	DDE2OPCPlugin.CDDEPlug.1 = s 'CDDEPlug Class'
+	{
+		CLSID = s '{A53F49FF-FBEE-4239-B9A1-5337A785C6DB}'
+	}
+	DDE2OPCPlugin.CDDEPlug = s 'CDDEPlug Class'
+	{
+		CLSID = s '{A53F49FF-FBEE-4239-B9A1-5337A785C6DB}'
+		CurVer = s 'DDE2OPCPlugin.CDDEPlug.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A53F49FF-FBEE-4239-B9A1-5337A785C6DB} = s 'CDDEPlug Class'
+		{
+			ProgID = s 'DDE2OPCPlugin.CDDEPlug.1'
+			VersionIndependentProgID = s 'DDE2OPCPlugin.CDDEPlug'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{F4130A69-C515-40bf-AE4D-8CAA2EF5F776}'
+		}
+	}
+}
