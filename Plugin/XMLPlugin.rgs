@@ -1,0 +1,25 @@
+HKCR
+{
+	PlugInXMLOPC.XMLPlugin.1 = s 'XMLPlugin Class'
+	{
+		CLSID = s '{E9A79354-7442-11D5-9CB4-004005A3070A}'
+	}
+	PlugInXMLOPC.XMLPlugin = s 'XMLPlugin Class'
+	{
+		CLSID = s '{E9A79354-7442-11D5-9CB4-004005A3070A}'
+		CurVer = s 'PlugInXMLOPC.XMLPlugin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E9A79354-7442-11D5-9CB4-004005A3070A} = s 'XMLPlugin Class'
+		{
+			ProgID = s 'PlugInXMLOPC.XMLPlugin.1'
+			VersionIndependentProgID = s 'PlugInXMLOPC.XMLPlugin'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{E9A79347-7442-11D5-9CB4-004005A3070A}'
+		}
+	}
+}

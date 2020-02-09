@@ -1,0 +1,34 @@
+// PlugInXMLOPC.idl : IDL source for PlugInXMLOPC.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PlugInXMLOPC.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "DMPluginIfs.idl";//;import "spacebrowse.idl";
+
+
+
+[
+	uuid(E9A79347-7442-11D5-9CB4-004005A3070A),
+	version(1.0),
+	helpstring("PlugInXMLOPC 1.0 Type Library")
+]
+library PLUGINXMLOPCLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(E9A79354-7442-11D5-9CB4-004005A3070A),
+		helpstring("XMLPlugin Class")
+	]
+	coclass XMLPlugin
+	{
+		[default] interface IPluginConfig;
+		interface IPluginData;
+		[source] interface IPluginDataCallback;
+	};
+};

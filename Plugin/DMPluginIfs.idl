@@ -1,0 +1,70 @@
+import "spacebrowse.idl";
+
+	//##ModelId=3C4E3C7F0232
+typedef struct {
+	            DWORD         hClient;
+	            BSTR          ItemName;
+				} ITEMID;
+
+////////////////////////////////////IPluginConfig 
+
+	//##ModelId=3C4E3C7F01C2
+	[
+		object,
+		uuid(EE33DD30-74D9-11d5-9CB4-004005A3070A),
+		//{EE33DD30-74D9-11d5-9CB4-004005A3070A}
+		//static const GUID <<name>> ={ 0xee33dd30, 0x74d9, 0x11d5, { 0x9c, 0xb4, 0x0, 0x40, 0x5, 0xa3, 0x7, 0xa } };
+
+		helpstring("IPluginConfig  Interface")
+	]
+	interface IPluginConfig  : IUnknown
+	{
+		//##ModelId=3C4E3C7F01D7
+		[helpstring("Говорит плагину, что требуется получать ивзвещения на переданные теги")] HRESULT AddNotifyTags([in,size_is(dwCount)]ITEMID*ClientTagID, [in]DWORD dwCount, [in]DWORD dwUpdateRate, [out, size_is(,dwCount)]HRESULT **pError);
+		//##ModelId=3C4E3C7F01F5
+		[helpstring("Функция отменяет получение нотификаций на переданные теги")] HRESULT DelNotifyTags([in,size_is(dwCount)]ITEMID*ClientTagID, [in]DWORD dwCount);
+		//##ModelId=3C4E3C7F0209
+		[helpstring("Функция обрабатывает строку натсройки плагина")] HRESULT Configure([in]BSTR CnfgString);
+		//##ModelId=3C4E3C7F021C
+		[helpstring("сброс настроек плагина")] HRESULT Reset();
+		//##ModelId=3C4E3C7F0226
+		[helpstring("method GetExampleCnfg - метод возвращает пример конфигурационной строки")] HRESULT GetExampleCnfg([in,out] BSTR * bstrExampleCnfg);
+		[helpstring("метод возвращает указатель на интерфейс ISpaceBrowse")] HRESULT GetBrowser([out]IUnknown**pBrowUnk);
+		[helpstring("метод для передачи полного имени лог-файла")] HRESULT SetFullLogFileName([in]BSTR LogFileName);
+	}
+
+	//##ModelId=3C4E3C7F014A
+	[
+		object,
+		uuid(EE33DD31-74D9-11d5-9CB4-004005A3070A),
+		//{EE33DD31-74D9-11d5-9CB4-004005A3070A}
+		//static const GUID <<name>> = { 0xee33dd31, 0x74d9, 0x11d5, { 0x9c, 0xb4, 0x0, 0x40, 0x5, 0xa3, 0x7, 0xa } };
+		helpstring("IPluginData  Interface")
+	]
+	interface IPluginData	:	IUnknown
+	{
+		//##ModelId=3C4E3C7F0169
+		[helpstring("чтение тегов")] HRESULT GetTags([in,size_is(dwCount)]ITEMID*ClientTagID ,[in]DWORD dwCount, [out,size_is(,dwCount)] OPCITEMSTATE **pOutStruct,[out,size_is(,dwCount)]HRESULT** ppErrors);
+		//##ModelId=3C4E3C7F0190
+		[helpstring("запись тегов")] HRESULT SetTags([in,size_is(Count)]ITEMID*ClientTagID ,[in]DWORD Count,[in,size_is(Count)] VARIANT *pItemValues,[out,size_is(,Count)]HRESULT** ppErrors);
+//		[helpstring("чтение тегов асинхронное") HRESULT GetAsyncTags([in]ITEMID*ClientTagID,[in]DWORD dwCount,[in]DWORD dwTransactionID);
+//		[helpstring("запись тегов асинхронная") HRESULT SetTags([in]ITEMID*ClientTagID ,[in]DWORD Count,[in]DWORD dwTransaction);
+		//##ModelId=3C4E3C7F01AF
+		[helpstring("запрос на состояние плагина (источника?)")] HRESULT GetState(DWORD State);
+	}
+
+
+
+	//##ModelId=3C4E3C7F00FE
+	[
+		uuid(E9A79355-7442-11D5-9CB4-004005A3070A),
+		helpstring("IPluginDataCallback Interface")
+	]
+	interface IPluginDataCallback :IUnknown
+	{
+		//##ModelId=3C4E3C7F010F
+		[helpstring("событие Изменение тега")] HRESULT OnTagsChange(DWORD dwCount, DWORD* phClientItems, VARIANT *pvValues,WORD* pwQualities,FILETIME*  pftTimeStamps, HRESULT * pErrors);
+		//##ModelId=3C4E3C7F0136
+		[helpstring("событие Устройство недоступно")] HRESULT OnDeviceNotAvailable(void);
+	};
+

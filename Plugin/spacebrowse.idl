@@ -1,0 +1,38 @@
+import "opccomn.idl";
+import "opcda.idl";
+
+
+	[
+		object,
+		uuid(4913C2D1-04A6-41a0-821F-3E61D7A57485),
+		helpstring("IChannelSpaceBrowser - interface для просмотра тегов канала"),
+		pointer_default(unique)
+	]
+	interface ISpaceBrowse : IUnknown
+	{
+
+		[helpstring("method BrowseAccessPaths - возвращает пути доступа к тегу")] HRESULT BrowseAccessPaths([in]LPCWSTR szItemID,[in,out] LPENUMSTRING *ppIEnumString);
+		[helpstring("method GetItemID - возвращает полное название тега")] HRESULT GetItemID([in]LPCWSTR szItemDataID, [in,out]LPWSTR *szItemID);
+		[helpstring("method BrowseOPCItemIDs - просмотр идентификаторов")] HRESULT BrowseOPCItemIDs([in] OPCBROWSETYPE   dwBrowseFilterType,[in] LPCWSTR  szFilterCriteria, [in] VARTYPE   vtDataTypeFilter, [in] DWORD    dwAccessRightsFilter,    [in,out] LPENUMSTRING  * ppIEnumString);
+		[helpstring("method ChangeBrowsePosition - смена текущей позиции просмотра")] HRESULT ChangeBrowsePosition([in] OPCBROWSEDIRECTION dwBrowseDirection,[in] LPCWSTR  szString);
+		[helpstring("method QueryAvailableProperties")] HRESULT QueryAvailableProperties([in] BSTR ItemID,[out] DWORD * pdwCount,[out,size_is(,*pdwCount)] DWORD **ppPropertyIDs,[out,size_is(,*pdwCount)] BSTR **ppDescriptions,[out,size_is(,*pdwCount)]VARTYPE **ppvtDataTypes);
+		[helpstring("method GetItemProperties")] HRESULT GetItemProperties([in] BSTR ItemID,[in] DWORD dwCount,[in,size_is(dwCount)] DWORD * pdwPropertyIDs,[out,size_is(,dwCount)] VARIANT ** ppvData,[out,size_is(,dwCount)] HRESULT **ppErrors);
+		[helpstring("method ValidateItem - проверка тегов")] HRESULT ValidateItem([in]DWORD dwCount,[in,size_is(dwCount)] OPCITEMDEF * pItemArray,[in] BOOL bBlobUpdate,[out,size_is(,dwCount)] OPCITEMRESULT ** ppValidationResults,[out,size_is(,dwCount)] HRESULT** ppErrors);
+	};
+
+
+[
+	uuid(03EE2F4E-8F0C-45b9-8A1B-737C4DFBA2E1),
+	version(1.0),
+	helpstring("SpaceBrowse 1.0 Type Library")
+]
+library SpaceBrowseLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+//	importlib("opcda.tlb");
+//	importlib("opccomn.tlb");
+
+
+interface ISpaceBrowse;
+}
