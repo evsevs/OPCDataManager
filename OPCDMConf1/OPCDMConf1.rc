@@ -1,0 +1,927 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\OPCDMConf1.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\idr_main.ico"
+IDR_OPCDMCTYPE          ICON                    "res\\idr_opcd.ico"
+IDI_ICON_TAG            ICON                    "res\\icon17.ico"
+IDI_ICON_CHANNEL        ICON                    "res\\icon18.ico"
+IDI_ICON_CHWIZARD       ICON                    "res\\icon1.ico"
+IDI_ICON_CHANNEL_DISCONNECTED ICON                    "res\\icon_cha.ico"
+IDI_ICON_TESTO          ICON                    "res\\ico00001.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\mainfram.bmp"
+IDB_SPLASH              BITMAP                  "Logo.bmp"
+IDB_WIZBMP              BITMAP                  "res\\leo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_BUTTON_CONNECT
+    BUTTON      ID_BUTTON_DISCONNECT
+    SEPARATOR
+    BUTTON      ID_BUTTON_EDIT_BASE_SETTINGS
+    SEPARATOR
+    BUTTON      ID_BUTTON_UPDATE_VIEWS
+    BUTTON      ID_BUTTON_PROP
+    SEPARATOR
+    BUTTON      ID_BUTTON_CHANNEL_ADD
+    BUTTON      ID_BUTTON_CHANNEL_DEL
+    SEPARATOR
+    BUTTON      ID_BUTTON_TAG_ADD
+    BUTTON      ID_BUTTON_TAG_DEL
+    SEPARATOR
+    BUTTON      ID_BUTTON_ALL_PAUSE
+    BUTTON      ID_BUTTON_ALL_CONTINUE
+    BUTTON      ID_BUTTON_SAVECONFIG
+    BUTTON      ID_FILE_SAVE_AS
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "Соединение"
+    BEGIN
+        MENUITEM "Редактировать до запуска",    ID__195
+        MENUITEM SEPARATOR
+        MENUITEM "Соединить",                   ID_BUTTON_CONNECT
+        MENUITEM "Разъединить",                 ID_BUTTON_DISCONNECT
+        MENUITEM "Сохранить конф.",             32792
+        MENUITEM "Сохранить конф. в...",        57604
+    END
+    POPUP "Просмотр"
+    BEGIN
+        MENUITEM "Свойства...",                 ID_BUTTON_PROP
+    END
+    POPUP "Редактировать"
+    BEGIN
+        MENUITEM "Добавить канал...",           ID_BUTTON_CHANNEL_ADD
+        MENUITEM "Удалить канал...",            ID_BUTTON_CHANNEL_DEL
+        MENUITEM SEPARATOR
+        MENUITEM "Добавить теги...",            ID_BUTTON_TAG_ADD
+        MENUITEM "Удалить теги...",             ID_BUTTON_TAG_DEL
+    END
+    POPUP "Действия"
+    BEGIN
+        MENUITEM "Пауза",                       ID_BUTTON_ALL_PAUSE
+        MENUITEM "Продолжить",                  ID_BUTTON_ALL_CONTINUE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About OPCDMConf1...",        ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About OPCDMConf1"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "OPCDMConf1 Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "Программа OPCDMConf предназначена для настройки OPC DM Manager",
+                    IDC_STATIC,23,49,184,86
+END
+
+IDD_CHANNELPROP_DLG DIALOGEX 0, 0, 308, 223
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Свойства канала"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,251,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,251,24,50,14
+    EDITTEXT        IDC_EDIT_CHNAME,127,7,106,14,ES_AUTOHSCROLL
+    LTEXT           "Название....................................:",
+                    IDC_STATIC,7,13,108,8
+    LTEXT           "Описание:",IDC_STATIC,7,161,36,8
+    EDITTEXT        IDC_EDIT_CHDESCR,91,161,205,22,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Режим.........................................:",
+                    IDC_STATIC,7,47,108,8
+    COMBOBOX        IDC_COMBO_CHMODE,127,43,66,58,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_TABSTOP
+    LTEXT           "Дата создания...........................:",IDC_STATIC,7,
+                    65,108,8
+    EDITTEXT        IDC_EDIT_CHDATE,127,59,95,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Период обновления данных......:",IDC_STATIC,7,83,109,8
+    EDITTEXT        IDC_EDIT_CHUPDATEPERIOD,127,77,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,164,76,9,
+                    14
+    LTEXT           "Идентификатор..........................:",IDC_STATIC,7,
+                    31,108,8
+    EDITTEXT        IDC_EDIT_CHID,127,25,64,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    LTEXT           "Cтрока инициализации:",IDC_STATIC,7,189,81,8
+    EDITTEXT        IDC_EDIT_CHCONFIGSTRING,91,189,205,22,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLUGINPROGID,127,112,169,14,ES_AUTOHSCROLL
+    LTEXT           "ProgID плагина...........................:",IDC_STATIC,
+                    7,115,108,8
+    EDITTEXT        IDC_EDIT_PLUGINCNFG,91,133,205,22,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Строка инициализации плагина:",IDC_STATIC,8,133,79,21,0,
+                    WS_EX_TRANSPARENT
+    COMBOBOX        IDC_COMBO_CHDEVICEUPDATE,127,95,48,47,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Режим обновления в устройстве:",IDC_STATIC,7,99,114,8
+END
+
+IDD_TAGPROP_DLG DIALOGEX 0, 0, 371, 214
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Свойства тега"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,314,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,314,24,50,14
+    LTEXT           "Полное название:",IDC_STATIC,7,9,62,8
+    EDITTEXT        IDC_EDIT_TAGNAME,73,7,218,14,ES_AUTOHSCROLL
+    LTEXT           "Идентификатор:",IDC_STATIC,7,25,56,8
+    EDITTEXT        IDC_EDIT_TAGID,73,24,40,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    LTEXT           "Свойства тега:",IDC_STATIC,7,43,52,8
+    CONTROL         "List1",IDC_LIST_TAGPROP,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,73,357,134
+    PUSHBUTTON      "Изменить",IDC_BUTTON1,314,55,50,14
+END
+
+IDD_WIZARDBASE DIALOGEX 0, 0, 302, 201
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Wizard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Далее",IDOK,191,180,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,251,180,50,14
+    PUSHBUTTON      "Назад",IDC_BACK,140,180,50,14,WS_DISABLED
+    CONTROL         "",IDC_STATIC1,"Static",SS_ETCHEDHORZ,7,177,299,1
+    CONTROL         168,IDC_PICTURE,"Static",SS_BITMAP | SS_REALSIZEIMAGE,3,
+                    2,79,160,WS_EX_CLIENTEDGE
+    CONTROL         "Wizard",IDC_BT_TITLE,"Button",BS_OWNERDRAW,85,3,215,11
+    CONTROL         "",IDC_PAGEFRAME,"Static",SS_ETCHEDFRAME | NOT 
+                    WS_VISIBLE,85,15,215,162
+END
+
+IDD_CHANNELADD_FIRST DIALOGEX 0, 0, 196, 126
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Название канала:",IDC_STATIC,7,7,62,8
+    EDITTEXT        IDC_EDIT_NAME,73,6,116,14,ES_AUTOHSCROLL
+    LTEXT           "Описание канала:",IDC_STATIC,7,28,62,8
+    EDITTEXT        IDC_EDIT_DESCR,73,30,116,54,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+END
+
+IDD_CHANNELADD_SECOND DIALOGEX 0, 0, 196, 128
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Введите строку конфигурации канала:",IDC_STATIC,7,7,132,
+                    8
+    EDITTEXT        IDC_EDIT_CNFGSTRING,7,32,182,31,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "(Пока не используется!)",IDC_STATIC,7,17,119,8
+    LTEXT           "Режим:",IDC_STATIC,7,68,26,8
+    COMBOBOX        IDC_COMBO_CHMODE,122,67,66,58,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_TABSTOP
+    LTEXT           "Период обновления данных:",IDC_STATIC,7,84,97,8
+    EDITTEXT        IDC_EDIT_CHUPDATEPERIOD,122,84,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,159,85,9,
+                    14
+    LTEXT           "Режим обновления в устройстве:",IDC_STATIC,7,104,114,8
+    COMBOBOX        IDC_COMBO_CHDEVICEUPDATE,122,102,48,47,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_CHANNELADD_THIRD DIALOGEX 0, 0, 196, 127
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Выберите плагин из списка:",IDC_STATIC,7,7,98,8
+    COMBOBOX        IDC_COMBO_PLUGIN,23,26,130,58,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_CHANNELADD_FOURTH DIALOGEX 0, 0, 196, 127
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Пример заполнения строки плагина:",IDC_STATIC,7,7,126,8
+    EDITTEXT        IDC_EDIT_PLUGINCNFG,7,68,182,46,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Конфигурационная строка плагина:",IDC_STATIC,7,57,122,8
+    EDITTEXT        IDC_EDIT_EXAMPLE,7,17,182,30,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_TAGADD_FIRST DIALOGEX 0, 0, 389, 194
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Добавление тегов по текущему пути выбранного канала"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Добавляемые теги:",IDC_STATIC,7,7,68,8,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "List1",IDC_LIST_ADDED_TAGS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,7,20,330,145
+    PUSHBUTTON      "+ (устр.)",IDC_BUTTON_ADD,347,14,35,17
+    PUSHBUTTON      "Вручную",IDC_BUTTON_ADDHAND,347,41,35,17
+    PUSHBUTTON      "Ok",IDOK,104,173,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,170,173,50,14
+END
+
+IDD_DIALOG_TEST_ADDTAG DIALOGEX 0, 0, 340, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Добавление из устройства"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,283,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,283,25,50,14
+    CONTROL         "Tree1",IDC_TREE_TAGS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,7,24,107,160
+    CONTROL         "List1",IDC_LIST_TAGS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,117,24,161,160
+    PUSHBUTTON      "Добавить",IDC_BUTTON_ADD,283,57,50,14
+    LTEXT           "Добавлено тегов:",IDC_STATIC,7,10,62,8
+    EDITTEXT        IDC_EDIT1,72,8,30,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_TAGSFILTER,117,8,104,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Обновить",IDC_BUTTON_UPDATEBROWSE,224,8,50,14
+END
+
+IDD_DIALOG_TEST_ADDTAGS_BASEPROP DIALOG  0, 0, 225, 233
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Общие свойства"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,59,208,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,114,208,50,14
+    LTEXT           "Количество добавляемых тегов:",IDC_STATIC,7,11,111,8
+    EDITTEXT        IDC_EDIT_TAGSCOUNT,120,9,30,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_EDIT_PREF,10,63,40,14,ES_AUTOHSCROLL
+    LTEXT           "Префикс",IDC_STATIC,10,51,32,8
+    GROUPBOX        "Название",IDC_STATIC,7,40,211,40
+    EDITTEXT        IDC_EDIT_POST,176,63,40,14,ES_AUTOHSCROLL
+    LTEXT           "Постфикс",IDC_STATIC,176,51,35,8
+    EDITTEXT        IDC_EDIT_NAME,56,63,114,14,ES_AUTOHSCROLL
+    LTEXT           "Имя",IDC_STATIC,56,51,16,8
+    COMBOBOX        IDC_COMBO_ACCESS,111,85,68,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Доступ.....................................:",
+                    IDC_STATIC,7,88,102,8
+    LTEXT           "Тип данных..............................:",IDC_STATIC,7,
+                    104,102,8
+    EDITTEXT        IDC_EDIT_TYPE,111,100,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Период обновления................:",IDC_STATIC,7,119,
+                    102,8
+    EDITTEXT        IDC_EDIT_UpdatePeriod,111,116,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,149,117,
+                    10,14
+    LTEXT           "Обновление по уведомлению:",IDC_STATIC,7,134,102,8
+    COMBOBOX        IDC_COMBO_NOTIFYUPDATE,111,132,30,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Описание:",IDC_STATIC,8,164,36,8
+    EDITTEXT        IDC_EDIT_DESCR,51,165,167,37,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Активность..............................:",IDC_STATIC,7,
+                    150,102,8
+    COMBOBOX        IDC_COMBO_ACTIVE,111,147,48,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Имя в устройстве:",IDC_STATIC,8,26,64,8
+    EDITTEXT        IDC_EDIT_RealName,73,24,145,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+IDD_DIALOG_EDIT_REGISTRY_SETTINGS DIALOGEX 0, 0, 234, 127
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Редактирование настроек в реестре"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,57,100,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,100,50,14
+    EDITTEXT        IDC_EDIT_CONF_FILE,17,36,200,13,ES_AUTOHSCROLL
+    LTEXT           "Укажите полное (с путем) название XML файла конфигурации:",
+                    IDC_STATIC,17,15,199,16
+    LTEXT           "Укажите полный путь к каталогу для хранения лог-файлов (без завершающего слэша):",
+                    IDC_STATIC,17,54,201,17
+    EDITTEXT        IDC_EDIT_LOGPATH,17,76,200,13,ES_AUTOHSCROLL
+END
+
+IDD_CHANNELADD_RESULT DIALOGEX 0, 0, 241, 167
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Название канала:",IDC_STATIC,7,7,62,8
+    EDITTEXT        IDC_EDIT_CHNAME,73,6,134,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Описание канала:",IDC_STATIC,7,25,62,8
+    EDITTEXT        IDC_EDIT_CHDESCR,73,22,134,27,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_WANTRETURN
+    LTEXT           "Режим.......................................:",
+                    IDC_STATIC,7,50,104,8
+    LTEXT           "Период обновления данных....:",IDC_STATIC,7,67,105,8
+    EDITTEXT        IDC_EDIT_CHUPDATEPERIOD,121,67,54,14,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    LTEXT           "Режим обновления в устройстве:",IDC_STATIC,7,85,114,8
+    EDITTEXT        IDC_EDIT_PLUGINNAME,121,99,87,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_CHDUMODE,121,83,54,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_CHMODE,121,51,53,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "ProgID плагина.........................:",IDC_STATIC,8,
+                    101,104,8
+    LTEXT           "Строка конфигурации плагина:",IDC_STATIC,7,116,106,8
+    EDITTEXT        IDC_EDIT_PLUGINCNFG,7,127,202,29,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_WANTRETURN
+END
+
+IDD_TAGSDEL_DLG DIALOGEX 0, 0, 270, 220
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Удаление тегов "
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Удалить",IDOK,90,199,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,149,199,50,14
+    LISTBOX         IDC_LIST_TAGSFORDEL,7,25,256,171,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_TAGSFILTER,55,7,104,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Обновить",IDC_BUTTON_UPDATEBROWSE,162,7,50,14
+END
+
+IDD_TAGPROP_EDIT_DLG DIALOGEX 0, 0, 238, 198
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Редактирование свойств тега"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,66,180,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,180,50,14
+    LTEXT           "Полное название:",IDC_STATIC,7,9,62,8
+    EDITTEXT        IDC_EDIT_TAGNAME,74,7,156,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ACCESS,127,60,68,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Доступ:",IDC_STATIC,7,63,102,8
+    LTEXT           "Тип данных.....................:",IDC_STATIC,7,79,102,8
+    EDITTEXT        IDC_EDIT_TYPE,127,76,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Период обновления.......:",IDC_STATIC,7,94,102,8
+    EDITTEXT        IDC_EDIT_UpdatePeriod,127,92,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,149,92,11,
+                    14
+    LTEXT           "Обновление по уведомлению:",IDC_STATIC,7,110,118,8
+    COMBOBOX        IDC_COMBO_NOTIFYUPDATE,127,107,30,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Описание:",IDC_STATIC,8,140,36,8
+    EDITTEXT        IDC_EDIT_DESCR,49,138,167,37,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Активность..............................:",IDC_STATIC,7,
+                    126,102,8
+    COMBOBOX        IDC_COMBO_ACTIVE,127,122,48,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Имя в устройстве:",IDC_STATIC,7,44,64,8
+    EDITTEXT        IDC_EDIT_RealName,73,41,145,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "OPCDMConf1 MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "OPCDMConf1"
+            VALUE "LegalCopyright", "Copyright (C) 2002"
+            VALUE "OriginalFilename", "OPCDMConf1.EXE"
+            VALUE "ProductName", "OPCDMConf1 Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_CHANNELPROP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_TAGPROP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_WIZARDBASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_CHANNELADD_FIRST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_CHANNELADD_SECOND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 121
+    END
+
+    IDD_CHANNELADD_THIRD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_CHANNELADD_FOURTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_TAGADD_FIRST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 382
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_DIALOG_TEST_ADDTAG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+    END
+
+    IDD_DIALOG_TEST_ADDTAGS_BASEPROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 226
+    END
+
+    IDD_DIALOG_EDIT_REGISTRY_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_CHANNELADD_RESULT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_TAGSDEL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        VERTGUIDE, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 213
+    END
+
+    IDD_TAGPROP_EDIT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CHANNELPROP_DLG DLGINIT
+BEGIN
+    IDC_COMBO_CHMODE, 0x403, 2, 0
+0x0030, 
+    IDC_COMBO_CHMODE, 0x403, 2, 0
+0x0031, 
+    IDC_COMBO_CHMODE, 0x403, 2, 0
+0x0032, 
+    IDC_COMBO_CHDEVICEUPDATE, 0x403, 5, 0
+0xe2c0, 0xeef2, "\000" 
+    IDC_COMBO_CHDEVICEUPDATE, 0x403, 8, 0
+0xeecf, 0xe820, 0xece7, 0x002e, 
+    0
+END
+
+IDD_CHANNELADD_SECOND DLGINIT
+BEGIN
+    IDC_COMBO_CHMODE, 0x403, 11, 0
+0xe2c0, 0xeef2, 0xe0e7, 0xf3ef, 0xeaf1, "\000" 
+    IDC_COMBO_CHDEVICEUPDATE, 0x403, 5, 0
+0xe2c0, 0xeef2, "\000" 
+    0
+END
+
+IDD_DIALOG_TEST_ADDTAGS_BASEPROP DLGINIT
+BEGIN
+    IDC_COMBO_ACCESS, 0x403, 12, 0
+0xe5cd, 0x20f2, 0xeee4, 0xf2f1, 0xeff3, 0x00e0, 
+    IDC_COMBO_ACCESS, 0x403, 14, 0
+0xeed2, 0xfceb, 0xeeea, 0xf720, 0xe5f2, 0xe8ed, 0x00e5, 
+    IDC_COMBO_ACCESS, 0x403, 14, 0
+0xeed2, 0xfceb, 0xeeea, 0xe720, 0xefe0, 0xf1e8, 0x00fc, 
+    IDC_COMBO_ACCESS, 0x403, 14, 0
+0xf2d7, 0xede5, 0xe5e8, 0xc72f, 0xefe0, 0xf1e8, 0x00fc, 
+    IDC_COMBO_NOTIFYUPDATE, 0x403, 4, 0
+0xe5cd, 0x00f2, 
+    IDC_COMBO_NOTIFYUPDATE, 0x403, 3, 0
+0xe0c4, "\000" 
+    IDC_COMBO_ACTIVE, 0x403, 11, 0
+0xe5cd, 0xe020, 0xf2ea, 0xe2e8, 0xede5, "\000" 
+    IDC_COMBO_ACTIVE, 0x403, 8, 0
+0xeac0, 0xe8f2, 0xe5e2, 0x00ed, 
+    0
+END
+
+IDD_TAGPROP_EDIT_DLG DLGINIT
+BEGIN
+    IDC_COMBO_ACCESS, 0x403, 12, 0
+0xe5cd, 0x20f2, 0xeee4, 0xf2f1, 0xeff3, 0x00e0, 
+    IDC_COMBO_ACCESS, 0x403, 14, 0
+0xeed2, 0xfceb, 0xeeea, 0xf720, 0xe5f2, 0xe8ed, 0x00e5, 
+    IDC_COMBO_ACCESS, 0x403, 14, 0
+0xeed2, 0xfceb, 0xeeea, 0xe720, 0xefe0, 0xf1e8, 0x00fc, 
+    IDC_COMBO_ACCESS, 0x403, 14, 0
+0xf2d7, 0xede5, 0xe5e8, 0xc72f, 0xefe0, 0xf1e8, 0x00fc, 
+    IDC_COMBO_NOTIFYUPDATE, 0x403, 4, 0
+0xe5cd, 0x00f2, 
+    IDC_COMBO_NOTIFYUPDATE, 0x403, 3, 0
+0xe0c4, "\000" 
+    IDC_COMBO_ACTIVE, 0x403, 11, 0
+0xe5cd, 0xe020, 0xf2ea, 0xe2e8, 0xede5, "\000" 
+    IDC_COMBO_ACTIVE, 0x403, 8, 0
+0xeac0, 0xe8f2, 0xe5e2, 0x00ed, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "OPCDMConf1\n\nOPCDMC\n\n\nOPCDMConf1.Document\nOPCDMC Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "OPCDMConf1"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Сохранить в конфигурационный файл и в указанное место\n Сохранение в конфигурации в указанное место и конфигурационный файл программы"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+    ID_VIEW_AUTOARRANGE     "Arrange icons on a grid."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_SMALLICON       "Display items by using small icons.\nSmall Icons"
+    ID_VIEW_LARGEICON       "Display items by using large icons.\nLarge Icons"
+    ID_VIEW_LIST            "Displays items in a list.\nList"
+    ID_VIEW_DETAILS         "Displays detailed information about each item in the window.\nDetails"
+    ID_VIEW_LINEUP          "Arranges icons in a grid."
+    ID_VIEW_BYNAME          "Sorts the icons alphabetically."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_CONNECT       "Соединить с OPC DataManager\n Соединить"
+    ID_BUTTON_DISCONNECT    "Отключиться от OPC DataManager\n Разъединить"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_PROP          "Просмотреть свойства канала/тега\n Свойства"
+    ID_BUTTON_CHANNEL_ADD   "Создать канал\n Создание нового канала"
+    ID_BUTTON_CHANNEL_DEL   "Удалить канал\n Удаление выбранного канала"
+    ID_BUTTON_TAG_ADD       "Добавить теги\n Добавление тегов в канал"
+    ID_BUTTON_TAG_DEL       "Удалить теги\n Удаление тегов выбранного канала"
+    ID_BUTTON_ALL_PAUSE     "Пауза\n Перевести сервер в режим SUSPENDED"
+    ID_BUTTON_ALL_CONTINUE  "Запустить\n Перевод сервера в режим RUNNING"
+    ID_BUTTON_SAVECONFIG    "Сохранить\n Сохранение изменений в конфигурационный файл"
+    ID_BUTTON_EDIT_BASE_SETTINGS 
+                            "Редактировать путь к лог-файлам и местонахождение конфигурационного файла\n Редактировать свойства в реестре"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_CONNECTED  "  UNKNOWN   "
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\OPCDMConf1.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
