@@ -1,0 +1,230 @@
+// OPCDMSvc.idl : IDL source for OPCDMSvc.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (OPCDMSvc.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+//import "opccomn.idl";
+//import "opcda.idl";
+import "spacebrowse.idl";
+
+
+
+
+	typedef struct  //для создания канала
+	{
+		BSTR ChannelName ;		//имя канала
+		BSTR PluginProgID;		//ProgID плагина
+		BSTR PluginCnfg;		//строка конфигурации плагина
+		BSTR ChannelCnfg;		//строка конфигурации канала
+		WORD ChannelMode;		//режим канала
+		DWORD UpdateRate;		//период обновления данных
+		BSTR ChannelDescription;	//описание канала
+		WORD DeviceUpdateMode;	//режим обновления устройства.
+
+	}ChannelDef;
+
+	typedef struct
+	{
+		VARTYPE vtTagType; //тип данных тега
+		DWORD	dwUpdateRateMS;//период обновления
+		BOOL	bNotifyUpdate;//обновление по нотификации
+		BOOL	bActive;//активность тега
+		BSTR	bstrTagDescription;
+		BSTR	bstrTagName;
+		BSTR	bstrRealName;
+		DWORD	dwAccessRight;
+	}TagDefStruct;
+
+[
+  object,
+  uuid(5A48C1BF-08A6-4807-AED1-B9AA8783D7E4),
+  pointer_default(unique)
+]
+interface IEnumOPCDMTagDef : IUnknown
+{
+  HRESULT Next( 
+    [in]  ULONG celt,
+    [out, size_is(,*pceltFetched)] TagDefStruct ** ppItemArray,
+    [out] ULONG * pceltFetched 
+    );
+
+  HRESULT Skip( 
+    [in] ULONG celt
+    );
+
+  HRESULT Reset( 
+    void
+    );
+
+  HRESULT Clone( 
+    [out] IEnumOPCDMTagDef ** ppEnumTagDef
+    );
+}
+
+
+
+	[
+		uuid(B5311029-081F-40F0-8BC2-C3F4AAE7F34D),
+		helpstring("IChannelDataCallback source interface")
+	]
+	interface IChannelDataCallback : IUnknown
+	{
+		HRESULT OnChannelDataChange();
+		HRESULT DeletedTags([in]DWORD  dwCount,[in,size_is(dwCount)]OPCHANDLE * hSrvHandles);
+	};
+
+	[
+		object,
+		uuid(4D9B1548-9D04-4657-9C49-2150B207D311),
+	
+		helpstring("IMyOPCSrv Interface - интерфейс OPC сервера (не стандартный)"),
+		pointer_default(unique)
+	]
+	interface IMyOPCSrv : IUnknown
+	{
+	};
+
+	[
+		object,
+		uuid(2A0C652F-4833-43c9-B5B2-F0C7E32B6615),
+	
+		helpstring("IChannelTagDef интерфейс для работы с тегами канала"),
+		pointer_default(unique)
+	]
+	interface IChannelTagDef : IUnknown
+	{
+
+//		[helpstring("method GetTagByID")] HRESULT GetTagByID([in] DWORD TagID, [in,out] TagDefStruct * pTagDef );
+//		[helpstring("method GetTagByName")] HRESULT GetTagByName([in]BSTR TagName,[in,out] TagDefStruct *pTagDef);
+//		[helpstring("method CreateTagDefEnum")] HRESULT CreateTagDefEnum([in,out] IEnumOPCDMTagDef**pTagDefEnum);
+		[helpstring("создает тег")] HRESULT CreateTags([in] DWORD dwCount,[in,size_is(dwCount)] TagDefStruct *pTagDefs,[out,size_is(,dwCount)] HRESULT**ppErrors);
+		[helpstring("создает тег")] HRESULT ChangeTagsDef([in] DWORD dwCount,[in,size_is(dwCount)] OPCHANDLE * pHandles,[in,size_is(dwCount)] TagDefStruct *pNewDefs,[out,size_is(,dwCount)] HRESULT**ppErrors);
+		[helpstring("method DeleteTags")] HRESULT DeleteTags([in]DWORD dwCount,[in,size_is(dwCount)]DWORD *dwHandles,[out,size_is(,dwCount)]HRESULT ** ppErrors);
+	};
+
+
+	[
+		object,
+		uuid(E92E6541-F496-4DA9-B819-1F0BD50774C3),
+	
+		helpstring("ICChannelObj interface предоставляется объектом канала"),
+		pointer_default(unique)
+	]
+	interface ICChannelObj : IUnknown
+	{
+		[propget, helpstring("property ClockRate - частота обновления кэша и устройства (если задан режим)")] HRESULT ClockRate([out, retval] DWORD *pVal);
+		[propput, helpstring("property ClockRate - частота обновления кэша и устройства (если задан режим)")] HRESULT ClockRate([in] DWORD newVal);
+		[propget, helpstring("property CreationTime - время создания канала")] HRESULT CreationTime([out, retval] FILETIME *pVal);
+		//[propget, helpstring("property DeviceUpdateMode - получение/установка режима обнолвения данных в устройстве")] HRESULT DeviceUpdateMode([out, retval] BOOL *pVal);
+		//[propput, helpstring("property DeviceUpdateMode - получение/установка режима обнолвения данных в устройстве")] HRESULT DeviceUpdateMode([in] BOOL newVal);
+		[helpstring("method GetBrowser")] HRESULT GetBrowser([out]IUnknown** pChannelBrowse);
+		[helpstring("method ReadTags - чтение")] HRESULT ReadTags([in] DWORD dwCount,[in, size_is(dwCount)] OPCHANDLE * phServer,[out, size_is(,dwCount)] OPCITEMSTATE ** ppItemValues,[out, size_is(,dwCount)] HRESULT ** ppErrors);
+		[helpstring("method WriteTags - запись")] HRESULT WriteTags([in] DWORD dwCount,[in, size_is(dwCount)] OPCHANDLE * phServer,[in, size_is(dwCount)] VARIANT * pItemValues, [out, size_is(,dwCount)] HRESULT ** ppErrors);
+		[propget, helpstring("Название канала")] HRESULT ChannelName([out, retval] BSTR *pVal);
+		[propget, helpstring("property ChannelID")] HRESULT ChannelID([out, retval] DWORD *pVal);
+		[propget, helpstring("Описание канала")] HRESULT Description([out, retval] BSTR *pVal);
+		[propput, helpstring("Описание канала")] HRESULT Description([in] BSTR newVal);
+		[propget, helpstring("Строка конфигурации канала")] HRESULT ConfgStr([out, retval] BSTR *pVal);
+		[propget, helpstring("property PluginCnfgString")] HRESULT PluginCnfgString([out, retval] BSTR *pVal);
+		[propget, helpstring("ProgID плагина канала")] HRESULT PluginProgID([out, retval] BSTR *pVal);
+	};
+
+
+	[
+		object,
+		uuid(78F8CD45-30A5-4000-B57C-6EC9E2C90380),
+	
+		helpstring("IMyTestConf Interface - предоставляются DataManager'ом для конфигурирования"),
+		pointer_default(unique)
+	]
+	interface IMyTestConf : IUnknown
+	{
+		[helpstring("Метод для создания канала")] HRESULT CreateChannel([in]ChannelDef* pChannelDef,[in,out]ICChannelObj**pICChannelObj );
+		[helpstring("метод удаления канала")] HRESULT DeleteChannel([in]DWORD dwChannelID);
+		[helpstring("метод для изменения режима работы канала")] HRESULT ChangeChannelMode([in] DWORD dwChannelID,[in] WORD wNewMode);
+		[helpstring("метод возвращает интерфейс канала по имени")] HRESULT GetChannelByName([in]BSTR ChannelName,[in,out]ICChannelObj**pICChannelObj);
+		[helpstring("метод возвращает интерфейс канала по ID")] HRESULT GetChannelByID([in]DWORD ChannelID,[in,out]ICChannelObj**pICChannelObj);
+		[helpstring("метод для получения списка каналов")] HRESULT EnumChannels([in,out] IEnumUnknown** ppEnumChannel);
+		[helpstring("метод для получения статуса")] HRESULT GetStatus([out]DWORD *pStatus);
+		[propget, helpstring("property DataLinkString - установка/получение названия файла XML конфигурации")] HRESULT ConfigXML([out, retval] BSTR *pVal);
+		[propput, helpstring("property DataLinkString - установка/получение названия файла XML конфигурации")] HRESULT ConfigXML([in] BSTR newVal);
+		[helpstring("method EnumPlagins - возвращает список ProgID плагинов")] HRESULT EnumPlugins([in,out]IEnumString** pEnumString);
+//		[helpstring("Рестартует заданный канал.")] HRESULT RestartChannel([in] DWORD ChannelID);
+		[helpstring("изменение состояния DM с RUNNING на SUSPENDED и наоборот")] HRESULT ChangeState([in] OPCSERVERSTATE newState);
+		[helpstring("сохранение текущего состояния в конфигурационный файл")] HRESULT SaveCurrentConfigToXML([in]BSTR secondCopyOfXML);
+		
+	};
+
+
+
+[
+	uuid(E75BC662-1D39-11D6-8E8A-000000000000),
+	version(1.0),
+	helpstring("OPCDMSvc 1.0 Type Library")
+]
+library OPCDMSVCLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+//	importlib("spacebrowse.tlb");
+
+
+
+
+//	importlib ("opcda.tlb");
+//	importlib ("opccomn.tlb");
+
+//	importlib("d:\develop\opc\opc2\opcda.tlb");
+//	importlib("d:\develop\opc\opc2\opccomn.tlb");
+
+
+
+//	importlib("spacebrowse.tlb");
+	struct ChannelDef;
+
+	[
+		uuid(3254F88B-341A-4252-AA1D-E2FFD6CE069C),
+		helpstring("MyOPCSrv Class")
+	]
+	coclass MyOPCSrv
+	{
+		[default] interface IMyOPCSrv;
+	//				interface IOPCServer;
+	};
+	[
+		uuid(B915BFA8-0CEE-43CC-9068-E6E355C6B412),
+		helpstring("_IMyTestConfEvents Interface")
+	]
+	interface IMyTestConfCallback : IUnknown
+	{
+		[helpstring("method OnDataChange")] HRESULT OnDataChange();
+	};
+
+
+	[
+		object,
+		uuid(13764883-5E6B-4173-B447-A4322E996B1B),
+	
+		helpstring("IMyGroup Interface"),
+		pointer_default(unique)
+	]
+	interface IMyGroup : IUnknown
+	{
+	};
+
+	[
+		uuid(0FD6A06B-4EBB-49BD-903D-4E125B14ED3E),
+		helpstring("MyTestConf Class")
+	]
+	coclass MyTestConf
+	{
+		[default] interface IMyTestConf;
+		[default, source] interface IMyTestConfCallback;
+	};
+
+
+};

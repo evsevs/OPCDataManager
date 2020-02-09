@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{E75BC663-1D39-11D6-8E8A-000000000000} = s 'OPCDMSvc'
+		'OPCDMSvc.EXE'
+		{
+			val AppID = s {E75BC663-1D39-11D6-8E8A-000000000000}
+		}
+	}
+}

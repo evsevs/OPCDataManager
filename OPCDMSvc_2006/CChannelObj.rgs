@@ -1,0 +1,23 @@
+HKCR
+{
+	OPCDMSvc.CChannelObj.1 = s 'CChannelObj Class'
+	{
+		CLSID = s '{76062A47-961A-4400-87C4-5FA37EF5267B}'
+	}
+	OPCDMSvc.CChannelObj = s 'CChannelObj Class'
+	{
+		CLSID = s '{76062A47-961A-4400-87C4-5FA37EF5267B}'
+		CurVer = s 'OPCDMSvc.CChannelObj.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {76062A47-961A-4400-87C4-5FA37EF5267B} = s 'CChannelObj Class'
+		{
+			ProgID = s 'OPCDMSvc.CChannelObj.1'
+			VersionIndependentProgID = s 'OPCDMSvc.CChannelObj'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{E75BC663-1D39-11D6-8E8A-000000000000}'
+			'TypeLib' = s '{E75BC662-1D39-11D6-8E8A-000000000000}'
+		}
+	}
+}

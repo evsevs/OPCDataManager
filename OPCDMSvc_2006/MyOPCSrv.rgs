@@ -1,0 +1,30 @@
+HKCR
+{
+	OPCDMSvc.MyOPCSrv.1 = s 'MyOPCSrv Class'
+	{
+		CLSID = s '{3254F88B-341A-4252-AA1D-E2FFD6CE069C}'
+		OPC
+		{
+			Vendor = s 'ZSMK CAPCS EVS'
+		}
+
+	}
+	OPCDMSvc.MyOPCSrv = s 'MyOPCSrv Class'
+	{
+		CLSID = s '{3254F88B-341A-4252-AA1D-E2FFD6CE069C}'
+		CurVer = s 'OPCDMSvc.MyOPCSrv.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3254F88B-341A-4252-AA1D-E2FFD6CE069C} = s 'MyOPCSrv Class'
+		{
+			ProgID = s 'OPCDMSvc.MyOPCSrv.1'
+			VersionIndependentProgID = s 'OPCDMSvc.MyOPCSrv'
+			LocalServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			val AppID = s '{E75BC663-1D39-11D6-8E8A-000000000000}'
+		}
+	}
+}

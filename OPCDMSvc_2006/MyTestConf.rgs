@@ -1,0 +1,23 @@
+HKCR
+{
+	OPCDMSvc.MyTestConf.1 = s 'MyTestConf Class'
+	{
+		CLSID = s '{0FD6A06B-4EBB-49BD-903D-4E125B14ED3E}'
+	}
+	OPCDMSvc.MyTestConf = s 'MyTestConf Class'
+	{
+		CLSID = s '{0FD6A06B-4EBB-49BD-903D-4E125B14ED3E}'
+		CurVer = s 'OPCDMSvc.MyTestConf.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0FD6A06B-4EBB-49BD-903D-4E125B14ED3E} = s 'MyTestConf Class'
+		{
+			ProgID = s 'OPCDMSvc.MyTestConf.1'
+			VersionIndependentProgID = s 'OPCDMSvc.MyTestConf'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{E75BC663-1D39-11D6-8E8A-000000000000}'
+			'TypeLib' = s '{E75BC662-1D39-11D6-8E8A-000000000000}'
+		}
+	}
+}
