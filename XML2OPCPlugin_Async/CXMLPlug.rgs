@@ -1,0 +1,25 @@
+HKCR
+{
+	XML2OPCPlugin.CXMLPlug.1 = s 'CXMLPlug Class'
+	{
+		CLSID = s '{B0A2E4F1-1C17-4FA2-AD20-CB13E0DE06DD}'
+	}
+	XML2OPCPlugin.CXMLPlug = s 'CXMLPlug Class'
+	{
+		CLSID = s '{B0A2E4F1-1C17-4FA2-AD20-CB13E0DE06DD}'
+		CurVer = s 'XML2OPCPlugin.CXMLPlug.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B0A2E4F1-1C17-4FA2-AD20-CB13E0DE06DD} = s 'CXMLPlug Class'
+		{
+			ProgID = s 'XML2OPCPlugin.CXMLPlug.1'
+			VersionIndependentProgID = s 'XML2OPCPlugin.CXMLPlug'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{490BD2B0-85F9-43C4-869D-21E2FED45F6D}'
+		}
+	}
+}

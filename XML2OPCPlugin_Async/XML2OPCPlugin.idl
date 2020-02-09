@@ -1,0 +1,32 @@
+// XML2OPCPlugin.idl : IDL source for XML2OPCPlugin.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (XML2OPCPlugin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "DMPluginIfs.idl";
+[
+	uuid(490BD2B0-85F9-43C4-869D-21E2FED45F6D),
+	version(1.0),
+	helpstring("XML2OPCPlugin 1.0 Type Library")
+]
+library XML2OPCPLUGINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(B0A2E4F1-1C17-4FA2-AD20-CB13E0DE06DD),
+		helpstring("CXMLPlug Class")
+	]
+	coclass CXMLPlug
+	{
+//		[default] interface ICXMLPlug;
+//		[default, source] dispinterface _ICXMLPlugEvents;
+		[default] interface IPluginConfig;
+		interface IPluginData;
+		[default, source] interface IPluginDataCallback;
+	};
+};
