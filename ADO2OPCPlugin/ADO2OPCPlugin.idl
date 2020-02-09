@@ -1,0 +1,32 @@
+// ADO2OPCPlugin.idl : IDL source for ADO2OPCPlugin.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ADO2OPCPlugin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "DMPluginIfs.idl";
+[
+	uuid(A2406A1D-6E73-4774-915D-4CD6FE65C828),
+	version(1.0),
+	helpstring("ADO2OPCPlugin 1.0 Type Library")
+]
+library ADO2OPCPLUGINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(8F413B29-2389-47ba-A8D6-F429E34B28A1),
+		helpstring("CADOPlug Class")
+	]
+	coclass CADOPlug
+	{
+//		[default] interface ICXMLPlug;
+//		[default, source] dispinterface _ICXMLPlugEvents;
+		[default] interface IPluginConfig;
+		interface IPluginData;
+		[default, source] interface IPluginDataCallback;
+	};
+};

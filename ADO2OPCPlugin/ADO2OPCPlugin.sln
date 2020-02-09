@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADO2OPCPlugin", "ADO2OPCPlugin.vcxproj", "{13B00C86-3362-43BD-8B89-ACA833DA8399}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release MinDependency|Win32 = Release MinDependency|Win32
+		Release MinSize|Win32 = Release MinSize|Win32
+		Unicode Debug|Win32 = Unicode Debug|Win32
+		Unicode Release MinDependency|Win32 = Unicode Release MinDependency|Win32
+		Unicode Release MinSize|Win32 = Unicode Release MinSize|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Debug|Win32.ActiveCfg = Debug|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Debug|Win32.Build.0 = Debug|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Release MinDependency|Win32.ActiveCfg = Release MinDependency|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Release MinDependency|Win32.Build.0 = Release MinDependency|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Release MinSize|Win32.ActiveCfg = Release MinSize|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Release MinSize|Win32.Build.0 = Release MinSize|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Unicode Release MinDependency|Win32.ActiveCfg = Unicode Release MinDependency|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Unicode Release MinDependency|Win32.Build.0 = Unicode Release MinDependency|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Unicode Release MinSize|Win32.ActiveCfg = Unicode Release MinSize|Win32
+		{13B00C86-3362-43BD-8B89-ACA833DA8399}.Unicode Release MinSize|Win32.Build.0 = Unicode Release MinSize|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

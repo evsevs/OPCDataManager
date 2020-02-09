@@ -1,0 +1,25 @@
+HKCR
+{
+	ADO2OPCPlugin.CADOPlug.1 = s 'CADOPlug Class'
+	{
+		CLSID = s '{8F413B29-2389-47ba-A8D6-F429E34B28A1}'
+	}
+	ADO2OPCPlugin.CADOPlug = s 'CADOPlug Class'
+	{
+		CLSID = s '{8F413B29-2389-47ba-A8D6-F429E34B28A1}'
+		CurVer = s 'ADO2OPCPlugin.CADOPlug.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8F413B29-2389-47ba-A8D6-F429E34B28A1} = s 'CADOPlug Class'
+		{
+			ProgID = s 'ADO2OPCPlugin.CADOPlug.1'
+			VersionIndependentProgID = s 'ADO2OPCPlugin.CADOPlug'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{A2406A1D-6E73-4774-915D-4CD6FE65C828}'
+		}
+	}
+}
