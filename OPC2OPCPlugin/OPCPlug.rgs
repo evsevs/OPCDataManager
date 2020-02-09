@@ -1,0 +1,25 @@
+HKCR
+{
+	OPC2OPCPlugin.OPCPlug.1 = s 'OPCPlug Class'
+	{
+		CLSID = s '{9E6A27D0-1043-4A10-96FE-6AAA2356DF68}'
+	}
+	OPC2OPCPlugin.OPCPlug = s 'OPCPlug Class'
+	{
+		CLSID = s '{9E6A27D0-1043-4A10-96FE-6AAA2356DF68}'
+		CurVer = s 'OPC2OPCPlugin.OPCPlug.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9E6A27D0-1043-4A10-96FE-6AAA2356DF68} = s 'OPCPlug Class'
+		{
+			ProgID = s 'OPC2OPCPlugin.OPCPlug.1'
+			VersionIndependentProgID = s 'OPC2OPCPlugin.OPCPlug'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{1F60F3C5-2039-43C3-95DC-3F9CF01C5331}'
+		}
+	}
+}

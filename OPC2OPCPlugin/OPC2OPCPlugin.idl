@@ -1,0 +1,37 @@
+// OPC2OPCPlugin.idl : IDL source for OPC2OPCPlugin.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (OPC2OPCPlugin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "DMPluginIfs.idl";
+[
+	uuid(1F60F3C5-2039-43C3-95DC-3F9CF01C5331),
+	version(1.0),
+	helpstring("OPC2OPCPlugin 1.0 Type Library")
+]
+library OPC2OPCPLUGINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//##ModelId=3C4E3C830030
+	[
+		uuid(9E6A27D0-1043-4A10-96FE-6AAA2356DF68),
+		helpstring("OPCPlug Class")
+	]
+	coclass OPCPlug
+	{
+		//##ModelId=3C4E3C830061
+		[default] interface IPluginConfig;
+		//##ModelId=3C4E3C830060
+		interface IPluginData;
+		//##ModelId=3C4E3C830057
+	//	interface ISpaceBrowse;
+		//##ModelId=3C4E3C830042
+		[default, source] interface IPluginDataCallback;
+	};
+};
